@@ -1,0 +1,76 @@
+
+
+PRIMITIVE TYPES
+
+  Boolean, character types
+  boolean
+  char
+
+  Integer types
+  byte
+  short
+  int
+  long
+
+  Floating point types
+  float
+  double
+
+  Primitive types are not objects.
+  Primitive types are passed by value.
+
+  Arrays can store primitive or reference types.
+    ChessPiece[][] chessBoard;
+    chessBoard = new ChessPiece[8][8];
+
+
+COLLECTIONS
+
+  Containers are designed to hold objects, e.g. Integer.
+
+  Superclass is Collection, which features:
+    add(obj)
+    remove(obj)
+    contains(obj)
+    size()
+    iterator() -> Iterator obj returned
+
+  There are interfaces and implementations...
+    For example, ArrayList is one implementation of List.
+    An interface is a set of empty methods, which an implementation may fulfill the functionality of.
+
+
+MAPS
+
+  Map<String, Date> dateMap = new HashMap<String, Date>();
+  dictionary.put("today", new Date());
+  Date today = dictionary.get("today");
+  
+
+
+CLASS SYNTAX
+
+  Inheritence
+  ... extends Superclass_name {}
+
+  Public/private
+  'public' allows methods to be called by methods outside of the class
+  'private' variables and methods can only be called from within class
+
+  Static
+  'static' variables and methods belong to class, not objects which are instances of the class
+  This allows for functional programing, e.g. by filling a class with static functions (however, watch out for Java's pass-by-reference)
+
+  Enhanced for-loop
+  for(int i  : arrayOfInts) {
+    System.out.println(i);
+    total = total + i;
+  }
+
+  main()
+  At least one class is to contain main()
+  public static void main(String [] args) {}
+  This means, the method can be called from outside the class, the method does not belong to the objects, return nothing, arguments as string.
+
+  Constructors
+  method names that are equivalent to the class name, multiple methods may take different argument lists.
