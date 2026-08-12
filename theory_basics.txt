@@ -1,23 +1,33 @@
 
-
 PRIMITIVE TYPES
 
   Primitive types are passed by value.
   Primitive types are not objects.
 
   Boolean, character types
-  boolean
-  char
+    boolean
+    char
 
   Integer types
-  byte
-  short
-  int
-  long
+    byte
+    short
+    int
+    long
 
   Floating point types
-  float
-  double
+    float
+    double
+
+  'null' is not a valid value of a primitive type (whereas Integer can be null).
+
+
+STRINGS & CHARS
+
+   String literal: "example"
+   Char literal: 'x'
+
+   charAt(pos) converts String to char.
+   char cannot be a number.
 
 
 ARRAYS
@@ -26,8 +36,14 @@ ARRAYS
     ChessPiece[][] chessBoard;
     chessBoard = new ChessPiece[8][8];
 
-    int[] int_array = new int[100];
-    String[] string_array = new String[100];
+    int[] xs = new int[100];
+    String[] ss = new String[100];
+
+  Common methods:
+    arr.length
+
+  Explicit arrays:
+    int[] xs = {1, 2, 3};
 
 
 COLLECTIONS
@@ -73,7 +89,7 @@ CLASS SYNTAX
 
   Objects are pass-by-reference.
 
-  Inheritence
+  Inheritance
   ... extends Superclass_name {}
 
   Public/private
@@ -102,3 +118,9 @@ CLASS SYNTAX
   Method names that are equivalent to the class name, multiple methods may take different argument lists.
   The constructor is to return nothing, else it is bypassed.
 
+
+SCOPE
+
+  Variables declared within a pair of curly braces are not available outside of them.
+  Workaround:
+    System.arraycopy(a, 0, b, 0, quantity);
