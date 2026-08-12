@@ -26,6 +26,9 @@ ARRAYS
     ChessPiece[][] chessBoard;
     chessBoard = new ChessPiece[8][8];
 
+    int[] int_array = new int[100];
+    String[] string_array = new String[100];
+
 
 COLLECTIONS
 
@@ -98,5 +101,4 @@ CLASS SYNTAX
   Constructors
   Method names that are equivalent to the class name, multiple methods may take different argument lists.
   The constructor is to return nothing, else it is bypassed.
-
 
