@@ -47,8 +47,9 @@ MAPS
   Date today = dictionary.get("today");
   
 
-
 CLASS SYNTAX
+
+  Objects are pass-by-reference.
 
   Inheritence
   ... extends Superclass_name {}
@@ -58,8 +59,11 @@ CLASS SYNTAX
   'private' variables and methods can only be called from within class
 
   Static
-  'static' variables and methods belong to class, not objects which are instances of the class
+  'static' variables and methods shared by all instances of class (only one variable value can exist at a time)
   This allows for functional programing, e.g. by filling a class with static functions (however, watch out for Java's pass-by-reference)
+
+  Final
+  'final' is short for final declaration.
 
   Enhanced for-loop
   for(int i  : arrayOfInts) {
@@ -74,3 +78,5 @@ CLASS SYNTAX
 
   Constructors
   method names that are equivalent to the class name, multiple methods may take different argument lists.
+
+
