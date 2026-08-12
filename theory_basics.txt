@@ -2,6 +2,9 @@
 
 PRIMITIVE TYPES
 
+  Primitive types are passed by value.
+  Primitive types are not objects.
+
   Boolean, character types
   boolean
   char
@@ -16,8 +19,8 @@ PRIMITIVE TYPES
   float
   double
 
-  Primitive types are not objects.
-  Primitive types are passed by value.
+
+ARRAYS
 
   Arrays can store primitive or reference types.
     ChessPiece[][] chessBoard;
@@ -26,9 +29,19 @@ PRIMITIVE TYPES
 
 COLLECTIONS
 
-  Containers are designed to hold objects, e.g. Integer.
+  Collection<Integer> example = new ArrayList<>();
 
-  Superclass is Collection, which features:
+  Containers are designed to hold objects, e.g. Integer.
+  They offer greater flexibility in manipulation.
+  Collections and arrays can be converted interchangeably.
+  
+    String [] myStrings = { "a", "b", "c" };
+    List list = Arrays.asList(myStrings);
+
+    Collection<String> myCollection = ...;
+    String [] myStrings = myCollection.toArray(new String[0]);
+
+  The shared superclass is Collection, which features:
     add(obj)
     remove(obj)
     contains(obj)
@@ -38,9 +51,15 @@ COLLECTIONS
   There are interfaces and implementations...
     For example, ArrayList is one implementation of List.
     An interface is a set of empty methods, which an implementation may fulfill the functionality of.
+    Subinterfaces may provide 
+
+  Casting
+    Data stored within types with some inheritance relationship can be cast to subtypes.
 
 
 MAPS
+
+  Standard key-value lookup, strongly typed.
 
   Map<String, Date> dateMap = new HashMap<String, Date>();
   dictionary.put("today", new Date());
@@ -55,15 +74,15 @@ CLASS SYNTAX
   ... extends Superclass_name {}
 
   Public/private
-  'public' allows methods to be called by methods outside of the class
-  'private' variables and methods can only be called from within class
+  'public' allows methods to be called by methods outside of the class.
+  'private' variables and methods can only be called from within class, classes can only be package-private.
 
   Static
   'static' variables and methods shared by all instances of class (only one variable value can exist at a time)
   This allows for functional programing, e.g. by filling a class with static functions (however, watch out for Java's pass-by-reference)
 
   Final
-  'final' is short for final declaration.
+  'final' is short for final declaration, as in constant.
 
   Enhanced for-loop
   for(int i  : arrayOfInts) {
@@ -77,6 +96,7 @@ CLASS SYNTAX
   This means, the method can be called from outside the class, the method does not belong to the objects, return nothing, arguments as string.
 
   Constructors
-  method names that are equivalent to the class name, multiple methods may take different argument lists.
+  Method names that are equivalent to the class name, multiple methods may take different argument lists.
+  The constructor is to return nothing, else it is bypassed.
 
 
