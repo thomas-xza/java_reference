@@ -1,10 +1,18 @@
 using System.Collections.Generic;
 
-//  OK I'm somewhat of a C# convert. Very similar to Java but a bit more simplified, modernised (e.g. a functional style is available).
-//  However still some legacy - both arrays and lists, lengthy to write.
-//  Similar advantages to Java - fast via compilation, good standard library (features balanced binary tree implementation).
-//  The Microsoft ownership has potentially gotten C# with Copilot very iterated - it was easy to build this basic reference.
-//  Todo: check Rust sometime.
+//  OK I'm somewhat of a C# convert. Very similar to Java but more simplified, modernised (e.g. more functional style). However still some legacy (both arrays and lists).
+//  Presumably faster than Python, definitely stronger than Python standard library (balanced binary tree implementation, akin to Java).
+//  Admittedly, it is lengthier to write than Python, but the Microsoft ownership has potentially gotten C# with Copilot very iterated - it was easy to build this basic reference.
+//  Todo: compare to Rust sometime.
+
+//  Function that returns multiple variables.
+(int, string) MultipleValueReturn() {
+    return (1, "Hello");
+}
+
+var (n, s) = MultipleValueReturn();
+Console.WriteLine($"MultipleValueReturn: n = {n}, s = {s}");
+
 
 //  Functional programming permitted.
 // But this is an either-or thing, you can't call functions from a Main() within a class if you put functions at global scope.
