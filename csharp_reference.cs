@@ -120,6 +120,13 @@ void DictionaryExample() {
         { 3, new List<string> { "Three", "Tres" } }
     };
 
+    //  Get value by key.
+    List<string> value = kv_store[2];
+    //  Set value by key.
+    kv_store[2] = new List<string> { "Two", "Deux" };
+
+    Console.WriteLine("Value for key 2: {0}", string.Join(", ", value));
+
 }
 
 
@@ -151,7 +158,7 @@ void StringsExample(){
     var target = "Hello";
     int i;
     for (i = 0; i < test_str.Length - target.Length + 1; i++) {
-        index = test_str.IndexOf(target, index);
+        index = test_str.IndexOf(target, i);
         Console.WriteLine("{0} '{1}'", i, test_str.Substring(i, target.Length));
         //  If index not equal to last_added, add to positions, update last_added.
         if (index != -1 && index != index_last_added) {
