@@ -112,6 +112,14 @@ void DictionaryExample() {
         Console.WriteLine("Key = {0}, Value = {1}", kvp.Key, kvp.Value);
     }
 
+    //  Key-value, of int to lists.
+    Dictionary<int, List<string>> kv_store = new()
+    {
+        { 1, new List<string> { "One", "Uno" } },
+        { 2, new List<string> { "Two", "Dos" } },
+        { 3, new List<string> { "Three", "Tres" } }
+    };
+
 }
 
 
@@ -144,12 +152,11 @@ void StringsExample(){
     int i;
     for (i = 0; i < test_str.Length - target.Length + 1; i++) {
         index = test_str.IndexOf(target, index);
-        Console.WriteLine("Positions of '{0}' in '{1}' '{2}:", target, index, test_str.Substring(i, target.Length));
+        Console.WriteLine("{0} '{1}'", i, test_str.Substring(i, target.Length));
         //  If index not equal to last_added, add to positions, update last_added.
         if (index != -1 && index != index_last_added) {
             positions.Add(index);
             index_last_added = index;
-            
         }
     }
 
@@ -239,7 +246,7 @@ public class SubNumberExperiment : NumberExperiment {
 }
 
 //  Example of overriding NumberExperiment - runtime polymorphism.
-//  Example of static polymorphism - method hiding.
+//  Example of overloading method - static polymorphism.
 public class OverridingNumberExperiment : NumberExperiment {
     //  Constructor.
     public OverridingNumberExperiment() {
