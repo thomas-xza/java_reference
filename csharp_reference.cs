@@ -33,6 +33,12 @@ void ListExample() {
     //  Sort list.
     l1.Sort();
 
+    //  Length of list.
+    int l1_len = l1.Count;
+
+    //  Select last element of list.
+    var l1_last = l1.Last();
+
     //  Iterate over list; same for l2.
     foreach (int l_elem in l1) {
         Console.WriteLine(l_elem);
@@ -62,6 +68,37 @@ void ListExample() {
 
     //  Select element at specific position.
     int element_at_position = l1[0];
+
+    //  Pre-sorted list, duplicates rejected.
+    SortedList<string, int> l4 = new SortedList<string, int>();
+    Dictionary<string, int> l4_counts = new Dictionary<string, int>();
+
+    var l5 = new List<(string Name, int Age)>{("One", 1), ("Two", 2), ("Three", 3)};
+
+    //  Append to list of tuples.
+    l5.Add(("Four", 4));
+
+    //  Remove from list of tuples.
+    l5.Remove(("Two", 2));
+
+    //  Remove at specific position.
+    l5.RemoveAt(0);
+
+    //  For loop over an explicit list.
+    foreach (var (key, value) in l5) {
+        try {
+            l4.Add(key, value);
+            l4_counts[key] = 1;
+        } catch (ArgumentException e) {
+            //  Equivalent functionality to Python's defaultdict(int).
+            l4_counts[key] = l4_counts.GetValueOrDefault(key, 0) + 1;
+        }
+    }
+
+    //  Output dictionary.
+    foreach (var kvp in l4) {
+        Console.WriteLine($"Key: {kvp.Key}, Value: {kvp.Value}");
+    }
 
 }
 
@@ -127,6 +164,10 @@ void DictionaryExample() {
 
     Console.WriteLine("Value for key 2: {0}", string.Join(", ", value));
 
+    //  HashSet data structure, for O(1) lookups.
+    HashSet<string> hs = new HashSet<string>();
+    hs.Add("test");
+
 }
 
 
@@ -172,6 +213,24 @@ void StringsExample(){
     foreach (int pos in positions) {
         Console.WriteLine(pos);
     }
+
+    //  Regex match all instances.
+    var regex = new System.Text.RegularExpressions.Regex("[a-z] [A-Z]");
+    var matches = regex.Matches(test_str);
+    foreach (System.Text.RegularExpressions.Match match in matches) {
+        Console.WriteLine("Found '{0}' at position {1}", match.Value, match.Index);
+    }
+
+    //  String to integer (failsafe).
+    if (int.TryParse(numberString, out int result))
+    {
+        Console.WriteLine("Converted to: {result}.");
+    }
+    else
+    {
+        Console.WriteLine("Not a valid integer.");
+    }
+
 }   
 
 void MathExample() {
@@ -188,7 +247,7 @@ void MathExample() {
 }
 
 void FunctionalProgrammingPattern() {
-    //  Example of functional programming pattern in C#.
+
     List<int> numbers = new() { 1, 2, 3, 4, 5 };
 
     //  Filter.
@@ -199,6 +258,7 @@ void FunctionalProgrammingPattern() {
 
     // Reduce.
     int sum = numbers.Aggregate(0, (acc, x) => acc + x);
+    
 }
 
 
@@ -208,6 +268,8 @@ DictionaryExample();
 StringsExample();
 MathExample();
 FunctionalProgrammingPattern();
+
+
 ClassExample();
 
 
