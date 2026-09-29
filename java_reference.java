@@ -1,7 +1,19 @@
-//  This is an automatic port of the C# reference, via Gemini.
+//  This is an automatic port of the C# reference that was built piece by piece.
+//  Further additions were then made.
+//  It essentially contains all major data structures, and how to read/write to them
+//    - matrices, balanced binary trees, key-value stores, etc.
 
-import java.util.*;
-import java.util.regex.*;
+import java.util.Collections;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.Map;
+import java.util.TreeMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class Main {
