@@ -17,7 +17,7 @@ class Solution {
 
         int i;
 
-        int[] xs = new int[1000000];
+        int[] xs = new int[1000005];
 
         for (int elem : A) {
             if (elem >= 0) {
