@@ -164,6 +164,12 @@ public class Main {
 
     static void dictionaryExample() {
 
+        //  Tuple as key.
+        //  Note that lists as key are considered bad practice, due to the mutability - values associated before modifications can allegedly be lost.
+        record Key(String name, int id) {}
+        Map<Key, String> m1 = new HashMap<>();
+        m1.put(new Key("Alice", 1), "Admin");
+
         // Balanced binary tree implementation; O(logn) lookups and insertions.
         TreeMap<Integer, String> balanced_binary_tree = new TreeMap<>() {{
             put(1, "One");
@@ -180,19 +186,19 @@ public class Main {
         }
 
         // Key-value, of int to lists.
-        Map<Integer, List<String>> kv_store = new HashMap<>() {{
+        Map<Integer, List<String>> m2 = new HashMap<>() {{
             put(1, new ArrayList<>(Arrays.asList("One", "Uno")));
             put(2, new ArrayList<>(Arrays.asList("Two", "Dos")));
             put(3, new ArrayList<>(Arrays.asList("Three", "Tres")));
         }};
 
         //  Insert, equivalent to Python's defaultdict(int).
-        kv_store.put("apple", kv_store.getOrDefault("apple", 0) + 1);
+        m2.put("apple", m2.getOrDefault("apple", 0) + 1);
 
         // Get value by key.
-        List<String> value = kv_store.get(2);
+        List<String> value = m2.get(2);
         // Set value by key.
-        kv_store.put(2, new ArrayList<>(Arrays.asList("Two", "Deux")));
+        m2.put(2, new ArrayList<>(Arrays.asList("Two", "Deux")));
 
         System.out.printf("Value for key 2: %s%n", String.join(", ", value));
 
