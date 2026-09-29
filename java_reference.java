@@ -186,6 +186,9 @@ public class Main {
             put(3, new ArrayList<>(Arrays.asList("Three", "Tres")));
         }};
 
+        //  Insert, equivalent to Python's defaultdict(int).
+        kv_store.put("apple", kv_store.getOrDefault("apple", 0) + 1);
+
         // Get value by key.
         List<String> value = kv_store.get(2);
         // Set value by key.
